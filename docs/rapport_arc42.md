@@ -167,7 +167,6 @@ Bounded Context: Reporting & Analytics
 Les relations sont documentées dans les diagrammes de séquence qui montrent :
 - **UC1-UC3** : Le contexte Reporting interroge les autres contextes
 - **UC2** : Le contexte Stock central fournit les données de réapprovisionnement
-- **UC4-UC5** : Le contexte Point de Vente impacte les stocks
 
 ---
 
@@ -175,7 +174,8 @@ Les relations sont documentées dans les diagrammes de séquence qui montrent :
 
 ### 5.1 Architecture MVC Complète
 
-**Référence** : Diagramme de Classes `docs/UML/diagarmme_classes.puml`
+**Référence** : 
+![Diagramme de Classes](UML/images/diagarmme_classes.png)
 
 Ce diagramme présente la décomposition complète en 3 couches :
 
@@ -196,7 +196,8 @@ Ce diagramme présente la décomposition complète en 3 couches :
 
 ### 5.2 Vue Composants
 
-**Référence** : Diagramme de Composants `docs/UML/diagramme_composants.puml`
+**Référence** : 
+![Diagramme de Composants](UML/images/diagramme_composants.png)
 
 Architecture simplifiée en 3 packages principaux :
 - **Interface Utilisateur** : Templates, CSS, JavaScript
@@ -214,22 +215,25 @@ Relations documentées entre les 9 composants identifiés.
 Les scénarios d'exécution suivants sont documentés dans les diagrammes de séquence :
 
 #### UC1 - Génération Rapport Consolidé
-**Référence** : `docs/UML/sequence_UC01_Generer_Rapport.puml`
+**Référence** :
+![Diagramme de séquence UC1](UML/images/sequence_UC01_Generer_Rapport.png)
 
-Flux : Gestionnaire → Navigateur → rapport_controller.py → models.py → Base de Données
+Flux : Gestionnaire → rapport_controller.py → consultation rapport
 - Récupération ventes par magasin
 - Calcul des produits les plus vendus  
 - Agrégation des stocks restants
 
 #### UC2 - Gestion Stock & Réapprovisionnement  
-**Référence** : `docs/UML/sequence_UC02_Stock_Reapprovisionnement.puml`
+**Référence** :
+![Diagramme de séquence UC2](UML/images/sequence_UC02_Stock_Reapprovisionnement.png)
 
 Flux : Employé → stock_central_controller.py → Consultation stock central
 - Affichage stock central consolidé
 - Demande de réapprovisionnement
 
 #### UC3 - Tableau de Bord Performances
-**Référence** : `docs/UML/sequence_UC03_Tableau_Bord.puml`
+**Référence** : 
+![Diagramme de séquence UC3](UML/images/sequence_UC03_Tableau_Bord.png)
 
 Flux : Gestionnaire → rapport_controller.py → Indicateurs clés
 - Chiffre d'affaires par magasin
@@ -237,7 +241,8 @@ Flux : Gestionnaire → rapport_controller.py → Indicateurs clés
 - Tendances hebdomadaires
 
 #### UC8 - Interface Web Minimale
-**Référence** : `docs/UML/sequence_UC08_Interface_Web.puml`
+**Référence** : 
+![Diagramme de séquence UC8](UML/images/sequence_UC08_Interface_Web.png)
 
 Flux : Gestionnaire → home_controller.py → Dashboard léger
 - Accès distant aux indicateurs essentiels
@@ -245,7 +250,8 @@ Flux : Gestionnaire → home_controller.py → Dashboard léger
 
 ### 6.2 Cas d'Utilisation Métier
 
-**Référence** : Diagramme de Cas d'Utilisation `docs/UML/diagramme_cas_utilisation.puml`
+**Référence** : 
+![Diagramme de cas d'utilisation](UML/images/diagramme_cas_utilisation.png)
 
 **2 acteurs principaux identifiés :**
 - **Gestionnaire Maison Mère** : 3 cas d'usage (rapports, tableau de bord, interface web)
@@ -259,7 +265,8 @@ Total : **8 cas d'utilisation** essentiels couvrant toutes les fonctionnalités.
 
 ### 7.1 Architecture de Déploiement
 
-**Référence** : Voir le diagramme complet dans `docs/UML/diagramme_deploiement.puml`
+**Référence** :
+![Diagramme de déploiement](UML/images/diagramme_deploiement.png)
 
 Ce diagramme présente l'architecture 3-tiers complète :
 
@@ -280,7 +287,7 @@ Ce diagramme présente l'architecture 3-tiers complète :
 
 ### 7.2 Caractéristiques Techniques par Tier
 
-**Référence** : Détails complets dans le diagramme `docs/UML/diagramme_deploiement.puml`
+**Référence** : voir sections 7.1
 
 Le diagramme documente :
 - Spécifications techniques de chaque nœud
